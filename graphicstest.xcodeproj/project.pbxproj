@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01C2AD561B962A8300FE2075 /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C2AD551B962A8300FE2075 /* CounterView.swift */; };
 		01C8DF951B95353B003EBCDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C8DF941B95353B003EBCDE /* AppDelegate.swift */; };
 		01C8DF971B95353B003EBCDE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C8DF961B95353B003EBCDE /* ViewController.swift */; };
 		01C8DF9A1B95353B003EBCDE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01C8DF981B95353B003EBCDE /* Main.storyboard */; };
 		01C8DF9C1B95353B003EBCDE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01C8DF9B1B95353B003EBCDE /* Images.xcassets */; };
 		01C8DF9F1B95353B003EBCDE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01C8DF9D1B95353B003EBCDE /* LaunchScreen.xib */; };
 		01C8DFAB1B95353B003EBCDE /* graphicstestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C8DFAA1B95353B003EBCDE /* graphicstestTests.swift */; };
+		01C8DFB51B953E88003EBCDE /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C8DFB41B953E88003EBCDE /* ButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01C2AD551B962A8300FE2075 /* CounterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
 		01C8DF8F1B95353B003EBCDE /* graphicstest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = graphicstest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01C8DF931B95353B003EBCDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01C8DF941B95353B003EBCDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +39,7 @@
 		01C8DFA41B95353B003EBCDE /* graphicstestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = graphicstestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		01C8DFA91B95353B003EBCDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01C8DFAA1B95353B003EBCDE /* graphicstestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = graphicstestTests.swift; sourceTree = "<group>"; };
+		01C8DFB41B953E88003EBCDE /* ButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,8 @@
 				01C8DF941B95353B003EBCDE /* AppDelegate.swift */,
 				01C8DF961B95353B003EBCDE /* ViewController.swift */,
 				01C8DF981B95353B003EBCDE /* Main.storyboard */,
+				01C2AD551B962A8300FE2075 /* CounterView.swift */,
+				01C8DFB41B953E88003EBCDE /* ButtonView.swift */,
 				01C8DF9B1B95353B003EBCDE /* Images.xcassets */,
 				01C8DF9D1B95353B003EBCDE /* LaunchScreen.xib */,
 				01C8DF921B95353B003EBCDE /* Supporting Files */,
@@ -214,6 +220,8 @@
 			files = (
 				01C8DF971B95353B003EBCDE /* ViewController.swift in Sources */,
 				01C8DF951B95353B003EBCDE /* AppDelegate.swift in Sources */,
+				01C8DFB51B953E88003EBCDE /* ButtonView.swift in Sources */,
+				01C2AD561B962A8300FE2075 /* CounterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +419,7 @@
 				01C8DFB01B95353B003EBCDE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		01C8DFB11B95353B003EBCDE /* Build configuration list for PBXNativeTarget "graphicstestTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +428,7 @@
 				01C8DFB31B95353B003EBCDE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
