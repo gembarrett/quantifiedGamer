@@ -6,12 +6,13 @@
 //  Copyright (c) 2015 Gem Barrett. All rights reserved.
 //
 
+//48, 95, 128
 import UIKit
 
 @IBDesignable
 
 class ButtonView: UIButton {
-    @IBInspectable var fillColour: UIColor = UIColor.blueColor()
+    @IBInspectable var fillColour: UIColor = UIColor(red: 0.18, green: 0.37, blue: 0.50, alpha: 1.0)
     @IBInspectable var isIncreaseButton: Bool = true
     
     // Only override drawRect: if you perform custom drawing.
