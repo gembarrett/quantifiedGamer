@@ -24,9 +24,10 @@ class ViewController: UIViewController {
     var currentPercent = Int()
     var badgeNo = 0 as Int
     var newStuff:[AnyObject] = []
-    // we start at 0, so no decreases
+    var userStats:[AnyObject] = []
     var maximum = Int()
     var nameOfGame = String()
+    var achievements = [String]()
     
     let globalPercentagesRequest = "http://api.steampowered.com/ISteamUserStats/GetGlobalAchievementPercentagesForApp/v0002/?gameid=\(gameid)&format=json" as String
     
@@ -47,12 +48,18 @@ class ViewController: UIViewController {
                 if stuff["achievementpercentages"] != nil {
                     stuff = (stuff["achievementpercentages"] as? Dictionary)!
                     self.newStuff = (stuff["achievements"]! as? Array)!
+                    for achievement in self.newStuff {
+//                        self.achievements.extend(achievement["name"] as! String)
+//                        println(self.achievements)
+                    }
                     self.maximum = self.newStuff.count - 1
                     self.updateVariables()
                     self.updateScreen()
+                    self.compareStats()
                 }
                 else if (stuff["playerstats"] != nil) {
                     stuff = (stuff["playerstats"] as? Dictionary)!
+                    self.userStats = (stuff["achievements"]! as? Array)!
                     self.nameOfGame = (stuff["gameName"]! as? String)!
                     if self.nameOfGame == "ValveTestApp1250" {
                         self.nameOfGame = "Killing Floor" as String
@@ -69,6 +76,17 @@ class ViewController: UIViewController {
         })
         jsonQuery.resume()
 
+    }
+    
+    func compareStats() {
+        var index: Int = 0
+        for game in newStuff {
+            println(game["name"]!)
+//            if newStuff[index].valueForKey("name")! == userStats[index].valueForKey("name")! {
+//                println()
+//            }
+            index++
+        }
     }
     
     override func viewDidLoad() {
