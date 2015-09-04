@@ -47,9 +47,8 @@ class ViewController: UIViewController {
                 if stuff["achievementpercentages"] != nil {
                     stuff = (stuff["achievementpercentages"] as? Dictionary)!
                     self.newStuff = (stuff["achievements"]! as? Array)!
-                    self.currentBadge = self.newStuff[self.badgeNo].valueForKey("name") as! String
-                    self.currentPercent = self.newStuff[self.badgeNo].valueForKey("percent") as! Int
                     self.maximum = self.newStuff.count - 1
+                    self.updateVariables()
                     self.updateScreen()
                 }
                 else if (stuff["playerstats"] != nil) {
@@ -58,7 +57,6 @@ class ViewController: UIViewController {
                     if self.nameOfGame == "ValveTestApp1250" {
                         self.nameOfGame = "Killing Floor" as String
                     }
-                    println(self.nameOfGame)
                     self.gameName.text = "Global achievement statistics for " + self.nameOfGame as String
                 }
                 UIApplication.sharedApplication().networkActivityIndicatorVisible = false
@@ -87,6 +85,11 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func updateVariables() {
+        self.currentBadge = self.newStuff[self.badgeNo].valueForKey("name") as! String
+        self.currentPercent = self.newStuff[self.badgeNo].valueForKey("percent") as! Int
+    }
+    
     func updateScreen() {
         self.badgeName.text = self.currentBadge
         let toInt: String = String(self.currentPercent)
@@ -101,8 +104,7 @@ class ViewController: UIViewController {
             if self.badgeNo < self.maximum {
                 // then we can increase
                 self.badgeNo++
-                self.currentBadge = self.newStuff[self.badgeNo].valueForKey("name") as! String
-                self.currentPercent = self.newStuff[self.badgeNo].valueForKey("percent") as! Int
+                updateVariables()
                 updateScreen()
             } else {
                 let errorMessage = "No more badges" as String
@@ -116,13 +118,8 @@ class ViewController: UIViewController {
             if self.badgeNo > 0 {
                 // then we can decrease
                 self.badgeNo--
-                self.currentBadge = self.newStuff[self.badgeNo].valueForKey("name") as! String
-                self.currentPercent = self.newStuff[self.badgeNo].valueForKey("percent") as! Int
-                
-                self.badgeName.text = self.currentBadge
-                let toInt: String = String(self.currentPercent)
-                self.counterLabel.text = toInt as String + "%"
-                self.counterView.counter = self.currentPercent
+                updateVariables()
+                updateScreen()
             } else {
                 let errorMessage = "No more badges" as String
                 var errorAlert = UIAlertController(title: "Something went wrong!", message: errorMessage, preferredStyle: .Alert)
